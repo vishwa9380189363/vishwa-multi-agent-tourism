@@ -8,10 +8,10 @@ def geocode_place(place: str):
         "limit": 1
     }
     headers = {
-        "User-Agent": "multi-agent-tourism-app/1.0 (your_email@example.com)"  
-        # Replace with your email or project name
+        # Must be a valid identifier with contact info
+        "User-Agent": "multi-agent-tourism-app/1.0 (contact: rachapallivishwa9363@gmail.com)"
     }
-    response = requests.get(url, params=params, headers=headers)
+    response = requests.get(url, params=params, headers=headers, timeout=10)
     response.raise_for_status()
     data = response.json()
     if not data:
